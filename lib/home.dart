@@ -1,11 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
-
-
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:v_player/provider/video_provider.dart';
 import 'package:v_player/utilities/video_item.dart';
+
 import 'package:v_player/video_player_screen.dart';
 
 
@@ -19,10 +17,6 @@ class VideoListScreen extends StatefulWidget {
 
 class _VideoListScreenState extends State<VideoListScreen> {
   bool isGrid = false; // To toggle between Grid and List view
-
-  
-
-  
 
   @override
   Widget build(BuildContext context) {

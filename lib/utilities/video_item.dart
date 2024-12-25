@@ -17,29 +17,7 @@ class VideoItem extends StatefulWidget {
 }
 
 class _VideoItemState extends State<VideoItem> {
-  /// Extracts the YouTube thumbnail URL from the video URL.
-  // String? getYouTubeThumbnail(String videoUrl) {
-  //   try {
-  //     final uri = Uri.tryParse(videoUrl);
-  //     if (uri != null && (uri.host.contains('youtube.com') || uri.host.contains('youtu.be'))) {
-  //       // Extract the video ID
-  //       if (uri.host.contains('youtube.com')) {
-  //         final videoId = uri.queryParameters['v'];
-  //         if (videoId != null) {
-  //           return 'https://img.youtube.com/vi/$videoId/hqdefault.jpg';
-  //         }
-  //       } else if (uri.host.contains('youtu.be')) {
-  //         final videoId = uri.pathSegments.isNotEmpty ? uri.pathSegments.first : null;
-  //         if (videoId != null) {
-  //           return 'https://img.youtube.com/vi/$videoId/hqdefault.jpg';
-  //         }
-  //       }
-  //     }
-  //   } catch (e) {
-  //     debugPrint('Error extracting YouTube thumbnail: $e');
-  //   }
-  //   return null; // Not a YouTube video
-  // }
+  
 
   // Generates a thumbnail for non-YouTube videos.
   Future<Uint8List?> getVideoThumbnail(String videoUrl) async {
@@ -76,7 +54,7 @@ class _VideoItemState extends State<VideoItem> {
               child: ImageNetwork(
                image: youtubeThumbnail, 
                height: MediaQuery.of(context).size.height / 1.5, 
-               width: MediaQuery.of(context).size.width / 1.5,
+               width: MediaQuery.of(context).size.width / 1.7,
                fitWeb: BoxFitWeb.cover,
                onLoading: const CircularProgressIndicator(),
                onTap: (){

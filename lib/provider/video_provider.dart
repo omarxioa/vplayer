@@ -47,8 +47,10 @@ class VideoPlayerProvider with ChangeNotifier {
 
   // Sample video data
   final List<String> videoUrls = [
-    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'https://www.youtube.com/watch?v=cEHP_LeBeyQ',
     'https://www.youtube.com/watch?v=uvX4k_3Cmvs',
+    'https://www.youtube.com/watch?v=LV-nazLVmgo',
+    'https://www.youtube.com/watch?v=2q4e07dbnD4',
     'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
   ];
