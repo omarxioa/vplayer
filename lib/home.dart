@@ -3,7 +3,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:v_player/video_plsyer_screen.dart';
+import 'package:v_player/video_player_screen.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
 
 class VideoListScreen extends StatefulWidget {
@@ -165,14 +165,3 @@ class _VideoListScreenState extends State<VideoListScreen> {
 }
 
 }
-
-
-// void main() {
-//   runApp(
-//     const MaterialApp(
-//       home: UniversalVideoPlayer(
-//         videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with any video URL
-//       ),
-//     ),
-//   );
-// }
