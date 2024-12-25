@@ -3,8 +3,11 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:get_thumbnail_video/index.dart';
+import 'package:get_thumbnail_video/video_thumbnail.dart';
 import 'package:v_player/video_player_screen.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
+
+
 
 class VideoListScreen extends StatefulWidget {
   const VideoListScreen({super.key});
@@ -25,6 +28,8 @@ class _VideoListScreenState extends State<VideoListScreen> {
     'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
   ];
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -94,13 +99,15 @@ class _VideoListScreenState extends State<VideoListScreen> {
     );
   }
 
-   Future<Uint8List?> getVideoThumbnail(String videoUrl) async {
+
+Future<Uint8List?> getVideoThumbnail(String videoUrl) async {
   try {
+    // Generate the thumbnail
     final thumbnail = await VideoThumbnail.thumbnailData(
       video: videoUrl,
       imageFormat: ImageFormat.PNG,
-      maxHeight: 150, // Specify the height of the thumbnail
-      quality: 75, // Quality from 0 (low) to 100 (high)
+      maxHeight: 150, // Thumbnail height
+      quality: 75,    // Quality of the thumbnail (0 to 100)
     );
     return thumbnail;
   } catch (e) {
@@ -108,6 +115,7 @@ class _VideoListScreenState extends State<VideoListScreen> {
     return null;
   }
 }
+
 
   Widget _buildVideoItem(String videoUrl) {
   return FutureBuilder<Uint8List?>(
@@ -126,6 +134,7 @@ class _VideoListScreenState extends State<VideoListScreen> {
       }
 
       if (snapshot.hasData && snapshot.data != null) {
+        print('thumbnail is loaded');
         return Stack(
           alignment: Alignment.center,
           children: [
