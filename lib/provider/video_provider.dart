@@ -45,8 +45,13 @@ class VideoPlayerProvider with ChangeNotifier {
     super.dispose(); // Call the parent class's dispose method
   }
 
-
-
+  // Sample video data
+  final List<String> videoUrls = [
+    'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'https://www.youtube.com/watch?v=uvX4k_3Cmvs',
+    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+  ];
  
 
 }

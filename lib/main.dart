@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:v_player/home.dart';
+import 'package:v_player/provider/thumbnail_provider.dart';
 import 'package:v_player/provider/video_provider.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: VideoPlayerProvider(),)
+        ChangeNotifierProvider.value(value: VideoPlayerProvider(),),
+        ChangeNotifierProvider.value(value: ThumbnailProvider(),)
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
