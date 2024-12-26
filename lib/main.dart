@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:media_kit/media_kit.dart';
 import 'package:provider/provider.dart';
 import 'package:v_player/home.dart';
 import 'package:v_player/provider/thumbnail_provider.dart';
 import 'package:v_player/provider/video_provider.dart';
 
 void main() {
+    WidgetsFlutterBinding.ensureInitialized();
+    MediaKit.ensureInitialized();
   runApp(const MyApp());
 }
 

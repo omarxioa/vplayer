@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 class ThumbnailProvider with ChangeNotifier {
   
@@ -14,7 +14,6 @@ String? getYouTubeThumbnail(String videoUrl) {
       return 'https://img.youtube.com/vi/$videoId/hqdefault.jpg';
     }
   }
-  notifyListeners();
   return null; // Not a YouTube video
   
 }

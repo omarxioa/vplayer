@@ -34,9 +34,10 @@ class _VideoItemState extends State<VideoItem> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
-    
     final  getYouTubeThumbnail = Provider.of<ThumbnailProvider>(context).getYouTubeThumbnail(widget.videoUrl);
     final youtubeThumbnail = getYouTubeThumbnail;
     if (youtubeThumbnail != null) {
@@ -54,7 +55,7 @@ class _VideoItemState extends State<VideoItem> {
               child: ImageNetwork(
                image: youtubeThumbnail, 
                height: MediaQuery.of(context).size.height / 1.5, 
-               width: MediaQuery.of(context).size.width / 1.7,
+               width: MediaQuery.of(context).size.width / .99,
                fitWeb: BoxFitWeb.cover,
                onLoading: const CircularProgressIndicator(),
                onTap: (){
@@ -94,6 +95,8 @@ class _VideoItemState extends State<VideoItem> {
         }
 
         if (snapshot.hasData && snapshot.data != null) {
+          // Convert byte array to Base64 string
+    final Uint8List imageData = Uint8List.fromList(snapshot.data!);
           return Stack(
             alignment: Alignment.center,
             children: [
@@ -103,10 +106,7 @@ class _VideoItemState extends State<VideoItem> {
                 ),
                 child: AspectRatio(
                   aspectRatio: 16 / 9,
-                  child: Image.memory(
-                    snapshot.data!,
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.memory(imageData,fit: BoxFit.cover,),
                 ),
               ),
               const Icon(
